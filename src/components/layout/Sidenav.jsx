@@ -1,20 +1,17 @@
 import React from "react";
 // import "../../assets/sass/layout/_header.scss";
+import Bike from "../../assets/images/Bike.svg"
+import Haltere from "../../assets/images/Haltere.svg"
+import Medium from "../../assets/images/Medium.svg"
+import Swim from "../../assets/images/Swim.svg"
 
 const Sidenav = () => {
     return (
         <nav className="sidenav">
-            {/*<Link to={"/"}>*/}
-            {/*    <img className="navbar__logo" src={Navbarlogo} alt="Logo Kasa" />*/}
-            {/*</Link>*/}
-            {/*<nav className="navbar__nav">*/}
-            {/*    <NavLink className="navbar__nav__link" to={"/"}>*/}
-            {/*        Accueil*/}
-            {/*    </NavLink>*/}
-            {/*    <NavLink className="navbar__nav__link" to={"about"}>*/}
-            {/*        A propos*/}
-            {/*    </NavLink>*/}
-            {/*</nav>*/}
+            <img src={Medium} alt="Medium"/>
+            <img src={Swim} alt="Swim"/>
+            <img src={Bike} alt="Bike"/>
+            <img src={Haltere} alt="Haltere"/>
         </nav>
     );
 };
