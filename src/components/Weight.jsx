@@ -1,38 +1,60 @@
-import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-import {getUserActivity} from "../utils/api";
-import {Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis} from "recharts";
+import React from "react";
+// import {useParams} from "react-router-dom";
+// import {getUserActivity} from "../utils/api";
+import {Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis} from "recharts";
 
+const CustomToolTip = ({active, payload}) => {
+    return active && payload ? (
+        <div className="tooltip">
+            <div className="poids">{`${payload[0].value} Kg`}</div>
+            <div className="calories">{`${payload[1].value} KCal`}</div>
+        </div>
+    ) : null;
+};
 
-const Weight = () => {
-    const {id} = useParams();
-    const [userActivity, setUserActivity] = useState([]);
-    useEffect(() => {
-        getUserActivity(id).then(r => setUserActivity(r.data.sessions))
-    }, [id])
-    if (!userActivity)
-        return "bad getaway"
-    console.log("userActivity", userActivity)
+const Weight = ({activity}) => {
+    console.log("activity", activity)
     return (
         <section>
             <h3>Activité quotidienne</h3>
             <p>Poids (kg)</p>
             <p>Calories brûlées (kCal)</p>
-            <BarChart width={730} height={250} data={userActivity}>
-                <CartesianGrid strokeDasharray="1 1"/>
+            <BarChart
+                width={730}
+                height={250}
+                data={activity}
+                
+            >
+                <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                 <XAxis dataKey="day"/>
                 <YAxis/>
-                <Tooltip/>
-                <Legend/>
-                <YAxis yAxisId="kilogram" dataKey="kilogram" domain={['dataMin - 2', 'dataMax + 1']}
-                       orientation="right"/>
-                <YAxis yAxisId="calories" type="number" dataKey="calories" hide={true}
-                       domain={['dataMin - 20', 'dataMax + 10']}
+                <Tooltip content={<CustomToolTip/>}/>
+                <YAxis
+                    yAxisId={"kil"}
+                    domain={["dataMin - 2", "dataMax + 1"]}
+                    tickLine={false}
+                    orientation="right"
+                    dataKey="kilogram"
+                    axisLine={false}
                 />
-                <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={[50, 50, 0, 0]}/>
-                <Bar dataKey="calories" fill="#E60000" barSize={7} radius={[50, 50, 0, 0]}/>
+                <YAxis
+                    yAxisId={"cal"}
+                    hide={true}
+                    domain={["dataMin - 100", "dataMax + 50"]}
+                />
+                <Bar
+                    dataKey="kilogram"
+                    fill="#282D30"
+                    radius={[50, 50, 0, 0]}
+                    // yAxisId={"kil"}
+                    barSize={15}/>
+                <Bar
+                    dataKey="calories" fill="#E60000"
+                    radius={[50, 50, 0, 0]}
+                    // yAxisId={"cal"}
+                    barSize={15}
+                />
             </BarChart>
-
         </section>
     )
 }

@@ -11,10 +11,7 @@ export default class UserPerformance {
         this.formatPerf.reverse();
     }
 
-    /**
-     *
-     * @returns kinf of performances translated in french
-     */
+
     translatePerf() {
         const formatPerf = [
             "Cardio",

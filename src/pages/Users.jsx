@@ -29,7 +29,7 @@ const Users = () => {
         <main>
             <h1>Bonjour {data?.user?.firstName}</h1>
             {/*<Informations></Informations>*/}
-            {/*<Weight></Weight>*/}
+            {/*<Weight activity={data?.activity?.sessions}></Weight>*/}
             {/*<Objectives></Objectives>*/}
             {/*<Radar></Radar>*/}
         </main>
