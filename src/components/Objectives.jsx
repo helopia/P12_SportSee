@@ -1,67 +1,59 @@
-import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-import {getUserAverageSessions} from "../utils/api";
-import {Line, LineChart, Tooltip, XAxis, YAxis} from "recharts";
-import {request} from "axios";
+import {Line, LineChart, Rectangle, Tooltip, XAxis} from "recharts";
 
-const Objectives = () => {
-    const {id} = useParams();
-    const [userAverageSessions, setUserAverageSessions] = useState(null);
-    useEffect(() => {
-        getUserAverageSessions(id).then(r => setUserAverageSessions(r.data.sessions))
-    }, [id])
-    if (!userAverageSessions)
-        return "bad getaway"
-    console.log("userAverageSessions", userAverageSessions)
 
-    const reformatUserAverageSessions = request.data.sessions.map((userAverageSessions) => {
-        switch (userAverageSessions.day) {
-            case 1 :
-                return {...userAverageSessions, day: "L"};
-            case 2 :
-                return {...userAverageSessions, day: "M"};
-            case 3 :
-                return {...userAverageSessions, day: "M"};
-            case 4 :
-                return {...userAverageSessions, day: "J"};
-            case 5 :
-                return {...userAverageSessions, day: "V"};
-            case 6 :
-                return {...userAverageSessions, day: "S"};
-            case 7 :
-                return {...userAverageSessions, day: "D"};
-            default:
-                return {...userAverageSessions};
-        }
-    });
-    setUserAverageSessions(reformatUserAverageSessions);
+const CustomToolTip = ({active, payload}) => {
+    return active && payload ? (
+        <div className="tooltip-session">
+            <div className="min">{`${payload[0].value} min`}</div>
+        </div>
+    ) : null;
+};
 
+
+const Cursor = ({points}) => {
     return (
-        <>
-            <h3>Durée moyenne des sessions</h3>
-            <LineChart data={setUserAverageSessions} strokeWidth={1}
+        <Rectangle
+            fill="#000000"
+            opacity={0.1}
+            x={points[1].x}
+            width={1000}
+            height={300}
+        />
+    );
+};
+const Objectives = (sessions) => {
+    console.log("sessions", sessions)
+    return (
+        <div className="session">
+            <div className="session__header">
+                <h1>Durée moyenne des sessions</h1>
+            </div>
+
+
+            <LineChart
+                data={sessions.sessions}
+                width={500}
+                height={300}
+                margin={{top: 5, right: 30, left: 20, bottom: 5}}
             >
                 <XAxis
-                    type="category"
+                    tickLine={false}
                     dataKey="day"
-                    tickLine={true}
-                    stroke="red"
-                    padding={{right: 5, left: 5}}
-                    tick={{fontSize: 13, stroke: "white", opacity: 0.8}}
+                    axisLine={false}
+                    stroke="#fff"
                 />
-                <YAxis
-                    dataKey="sessionLength"
-
-                />
-                <Tooltip/>
+                <Tooltip content={<CustomToolTip/>} cursor={<Cursor/>}/>
                 <Line
                     type="monotone"
                     dataKey="sessionLength"
-
+                    stroke="#fff"
+                    dot={false}
+                    activeDot={{r: 3}}
                 />
             </LineChart>
-        </>
-    )
+
+        </div>
+    );
 }
 export default Objectives;
 

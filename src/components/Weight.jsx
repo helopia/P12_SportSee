@@ -23,7 +23,7 @@ const Weight = ({activity}) => {
                 width={730}
                 height={250}
                 data={activity}
-                
+
             >
                 <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                 <XAxis dataKey="day"/>
@@ -46,12 +46,12 @@ const Weight = ({activity}) => {
                     dataKey="kilogram"
                     fill="#282D30"
                     radius={[50, 50, 0, 0]}
-                    // yAxisId={"kil"}
+                    yAxisId={"kil"}
                     barSize={15}/>
                 <Bar
                     dataKey="calories" fill="#E60000"
                     radius={[50, 50, 0, 0]}
-                    // yAxisId={"cal"}
+                    yAxisId={"cal"}
                     barSize={15}
                 />
             </BarChart>

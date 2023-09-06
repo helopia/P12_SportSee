@@ -7,13 +7,16 @@ export default class UserPerformance {
             kind: this.kindOfPerf[kind],
             value: performance.value
         }));
-        // reverse formatPerf table
+        // reverse formatperf
         this.formatPerf.reverse();
     }
 
-
+    /**
+     *
+     * @returns kinf of performances translated in french
+     */
     translatePerf() {
-        const formatPerf = [
+        return [
             "Cardio",
             "Energie",
             "Endurance",
@@ -21,6 +24,5 @@ export default class UserPerformance {
             "Vitesse",
             "Intensité"
         ];
-        return formatPerf;
     }
 }

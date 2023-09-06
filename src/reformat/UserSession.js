@@ -1,5 +1,5 @@
 export default class UserSession {
-    constructor({ sessions, userId }) {
+    constructor({sessions, userId}) {
         this.id = userId;
         this.sessions = this.formatDay(sessions.day);
         this.sessionData = sessions.map((session, index) => ({
@@ -10,7 +10,6 @@ export default class UserSession {
     }
 
     formatDay() {
-        const formatDay = ["L", "M", "M", "J", "V", "S", "D"];
-        return formatDay;
+        return ["L", "M", "M", "J", "V", "S", "D"];
     }
 }

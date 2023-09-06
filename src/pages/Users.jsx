@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 // import {getUserActivity, getUserAverageSessions, getUserData, getUserPerformance} from "../router/mockedData";
 import {getUserActivity, getUserMainData, getUserPerformance, getUserSession} from "../utils/api";
+import Macronutriments from "../components/Macronutriments";
 
 
 const Users = () => {
@@ -30,8 +31,10 @@ const Users = () => {
             <h1>Bonjour {data?.user?.firstName}</h1>
             {/*<Informations></Informations>*/}
             {/*<Weight activity={data?.activity?.sessions}></Weight>*/}
-            {/*<Objectives></Objectives>*/}
-            {/*<Radar></Radar>*/}
+            {/*<Objectives sessions={data?.sessions?.sessionData}></Objectives>*/}
+            {/*<RadarComponent performance={data?.performance?.formatPerf}/>*/}
+            {/*<Score score={data?.user?.score[0]?.value}></Score>*/}
+            <Macronutriments></Macronutriments>
         </main>
     )
 }

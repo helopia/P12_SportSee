@@ -9,20 +9,19 @@ const Header = () => {
             <Link to={"/"}>
                 <img className="navbar__logo" src={Navbarlogo} alt="Logo Kasa"/>
             </Link>
-            <nav className="navbar__nav">
-                <NavLink className="navbar__nav__link" to={"/"}>
-                    Accueil
-                </NavLink>
-                <NavLink className="navbar__nav__link" to={"/"}>
-                    Profil
-                </NavLink>
-                <NavLink className="navbar__nav__link" to={"/"}>
-                    Réglage
-                </NavLink>
-                <NavLink className="navbar__nav__link" to={"/"}>
-                    Communauté
-                </NavLink>
-            </nav>
+            <NavLink className="navbar__navlink" to={"/"}>
+                Accueil
+            </NavLink>
+            <NavLink className="navbar__navlink" to={"/"}>
+                Profil
+            </NavLink>
+            <NavLink className="navbar__navlink" to={"/"}>
+                Réglage
+            </NavLink>
+            <NavLink className="navbar__navlink" to={"/"}>
+                Communauté
+            </NavLink>
+
         </header>
     );
 };
