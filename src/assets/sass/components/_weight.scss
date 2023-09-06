@@ -12,6 +12,10 @@
     justify-content: space-between;
     padding: 24px;
 
+    & span {
+      margin: 0 10px 0 10px;
+    }
+
     &__legend {
       color: #74798c;
       font-size: 14px;

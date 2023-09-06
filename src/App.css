@@ -189,6 +189,9 @@ li {
   justify-content: space-between;
   padding: 24px;
 }
+.activity__header span {
+  margin: 0 10px 0 10px;
+}
 .activity__header__legend {
   color: #74798c;
   font-size: 14px;
