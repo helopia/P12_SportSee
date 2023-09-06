@@ -4,8 +4,8 @@ import {getUserMainData} from "../utils/api";
 import Card from "./Card";
 import Calories from "../assets/images/calories-icon.svg";
 import Protein from "../assets/images/proteines-icon.svg";
-import Carbs from "../assets/images/glucides-icon.svg";
-import Fat from "../assets/images/lipides-icon.svg";
+import Apple from "../assets/images/glucides-icon.svg";
+import Burger from "../assets/images/lipides-icon.svg";
 
 const Macronutriments = () => {
     const {id} = useParams();
@@ -41,17 +41,17 @@ const Macronutriments = () => {
             />
 
             <Card
-                className="carbs"
-                src={Carbs}
+                className="apple"
+                src={Apple}
                 alt="Logo pomme"
-                textClassName="carbs"
+                textClassName="Apple"
                 data={`${data?.keyData.carbohydrateCount}g`}
                 text="Glucides"
             />
 
             <Card
-                className="fat"
-                src={Fat}
+                className="burger"
+                src={Burger}
                 alt="Logo burger"
                 textClassName="fat"
                 data={`${data?.keyData.lipidCount}g`}

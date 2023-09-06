@@ -3,14 +3,15 @@
   width: 258px;
   background-color: #ff0000;
   border-radius: 5px;
-}
 
-.session__header h1 {
-  padding: 29px 29px 0 29px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 200;
-  margin: 0 0 20px 0;
+
+  &__header h1 {
+    padding: 29px 29px 0 29px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 200;
+    margin: 0 0 20px 0;
+  }
 }
 
 .tooltip-session {

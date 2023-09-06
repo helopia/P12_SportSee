@@ -1,0 +1,39 @@
+.informations {
+  display: flex;
+  flex-direction: column;
+
+
+  &__calories,
+  &__protein,
+  &__apple,
+  &__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    background-color: #fbfbfb;
+    height: 124px;
+    width: 258px;
+    border-radius: 5px;
+  }
+
+  & h1,
+  & p {
+    margin: 0;
+  }
+
+  & h1 {
+    font-size: 20px;
+    color: #282d30;
+  }
+
+  & p {
+    font-size: 14px;
+    color: #74798c;
+  }
+
+  & img {
+    margin-right: 20px;
+    margin-left: -30px;
+  }
+}

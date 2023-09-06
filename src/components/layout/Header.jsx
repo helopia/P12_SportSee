@@ -15,10 +15,10 @@ const Header = () => {
             <NavLink className="navbar__navlink" to={"/"}>
                 Profil
             </NavLink>
-            <NavLink className="navbar__navlink" to={"/"}>
+            <NavLink className="navbar__navlink" to={"#"}>
                 Réglage
             </NavLink>
-            <NavLink className="navbar__navlink" to={"/"}>
+            <NavLink className="navbar__navlink" to={"#"}>
                 Communauté
             </NavLink>
 

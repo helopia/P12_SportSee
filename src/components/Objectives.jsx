@@ -1,4 +1,4 @@
-import {Line, LineChart, Rectangle, Tooltip, XAxis} from "recharts";
+import {Line, LineChart, Rectangle, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 
 
 const CustomToolTip = ({active, payload}) => {
@@ -28,30 +28,29 @@ const Objectives = (sessions) => {
             <div className="session__header">
                 <h1>Durée moyenne des sessions</h1>
             </div>
-
-
-            <LineChart
-                data={sessions.sessions}
-                width={500}
-                height={300}
-                margin={{top: 5, right: 30, left: 20, bottom: 5}}
-            >
-                <XAxis
-                    tickLine={false}
-                    dataKey="day"
-                    axisLine={false}
-                    stroke="#fff"
-                />
-                <Tooltip content={<CustomToolTip/>} cursor={<Cursor/>}/>
-                <Line
-                    type="monotone"
-                    dataKey="sessionLength"
-                    stroke="#fff"
-                    dot={false}
-                    activeDot={{r: 3}}
-                />
-            </LineChart>
-
+            <ResponsiveContainer width="100%" height="70%">
+                <LineChart
+                    data={sessions.sessions}
+                    width={500}
+                    height={300}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                >
+                    <XAxis
+                        tickLine={false}
+                        dataKey="day"
+                        axisLine={false}
+                        stroke="#fff"
+                    />
+                    <Tooltip content={<CustomToolTip/>} cursor={<Cursor/>}/>
+                    <Line
+                        type="monotone"
+                        dataKey="sessionLength"
+                        stroke="#fff"
+                        dot={false}
+                        activeDot={{r: 3}}
+                    />
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 }

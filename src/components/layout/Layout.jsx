@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import {Outlet} from "react-router-dom";
 import Sidenav from "./Sidenav";
+import {Outlet} from "react-router-dom";
 
 const Layout = () => {
     return (

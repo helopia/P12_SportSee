@@ -1,0 +1,33 @@
+.user {
+  padding-left: 8rem;
+
+  &__welcome {
+    margin: 1rem 8rem;
+
+    & span {
+      color: red;
+    }
+  }
+
+  &__chart {
+    display: flex;
+
+
+    &__box {
+      max-width: 1240px;
+      width: 100%;
+      margin: 2% auto auto;
+
+      &-bottom {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+      }
+    }
+
+    &__macronutriments {
+
+    }
+  }
+}

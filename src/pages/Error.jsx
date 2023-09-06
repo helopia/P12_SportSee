@@ -1,4 +1,4 @@
-import {useRouteError} from "react-router-dom";
+import {Link, useRouteError} from "react-router-dom";
 // import "../assets/sass/pages/_error.scss";
 
 const ErrorPage = () => {
@@ -6,16 +6,13 @@ const ErrorPage = () => {
     console.error(error);
 
     return (
-        <main className="main error-page" id="error-page">
-            <p className="error-page__404">404</p>
-            <p className="error-page__text">
-                Oups! La page que vous demandez n'existe pas
-            </p>
-            <a className="error-page__link " href="/">
-                Retourner sur la page d'acceuil
-            </a>
-
-        </main>
+        <>
+            <main className='error_container'>
+                <h1>Erreur 404</h1>
+                <h2>Oups ! La page que vous demandez n'existe pas.</h2>
+                <Link to='/'>Retourner sur la page d’accueil</Link>
+            </main>
+        </>
     );
 };
 export default ErrorPage;

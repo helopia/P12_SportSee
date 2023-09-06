@@ -1,5 +1,16 @@
+@import "base";
+
+@import "./pages/home";
+@import "./pages/users";
+@import "./pages/error";
+
 @import "./components/layout/sidenav";
 @import "./components/layout/header";
 @import "./components/layout/layout";
-@import "./components/userSession";
-@import "./pages/home";
+@import "./components/objectives";
+@import "./components/weight";
+@import "./components/radar";
+@import "./components/macronutriments";
+@import "./components/score";
+
+

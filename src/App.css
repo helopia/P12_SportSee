@@ -1,7 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0.5rem;
+}
+
+.homepage {
+  max-width: 1240px;
+  margin-left: 15rem;
+}
+.homepage__title {
+  margin: 4rem 0;
+}
+.homepage a {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.user {
+  padding-left: 8rem;
+}
+.user__welcome {
+  margin: 1rem 8rem;
+}
+.user__welcome span {
+  color: red;
+}
+.user__chart {
+  display: flex;
+}
+.user__chart__box {
+  max-width: 1240px;
+  width: 100%;
+  margin: 2% auto auto;
+}
+.user__chart__box-bottom {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.error_container {
+  max-width: 1240px;
+  width: 100%;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.error_container h1 {
+  justify-content: center;
+  font-size: 72px;
+  color: red;
+}
+.error_container h2 {
+  justify-content: center;
+  font-size: 40px;
+}
+.error_container a {
+  font-size: larger;
+  margin-top: 10%;
+}
+
 .sidenav {
   overflow: hidden;
   position: relative;
   z-index: 10;
+}
+.sidenav__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 117px;
+  height: 100vh;
+  background: #020203;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sidenav__content__links {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 64px;
+  position: absolute;
+  top: 30%;
+  left: 26px;
+}
+.sidenav__content__links a {
+  display: flex;
+  height: 64px;
+  width: 64px;
+  margin-bottom: 20px;
+}
+.sidenav__content__copyright {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 59px;
+  left: 42px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  color: white;
+  margin: auto;
 }
 
 .navbar {
@@ -31,7 +161,6 @@
   background-color: #ff0000;
   border-radius: 5px;
 }
-
 .session__header h1 {
   padding: 29px 29px 0 29px;
   color: #fff;
@@ -47,18 +176,131 @@
   background-color: #fff;
 }
 
-.homepage {
-  max-width: 1240px;
-  margin-left: 15rem;
+.activity {
+  height: 320px;
+  width: 100%;
+  margin-bottom: 4rem;
+  margin-right: 20px;
+  background-color: #fbfbfb;
+  border-radius: 5px;
 }
-.homepage__title {
-  margin: 4rem 0;
+.activity__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
 }
-.homepage a {
-  margin-top: 1rem;
+.activity__header__legend {
+  color: #74798c;
+  font-size: 14px;
+}
+.activity__header__legend__dot {
+  margin-right: 5px;
+  margin-left: 50px;
+}
+.activity__header h3 {
+  margin-top: 0;
+  font-size: 15px;
+  color: #20253a;
+}
+
+.tooltip {
   display: flex;
   flex-direction: column;
-  color: red;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #e60000;
+  color: #fff;
+}
+
+.weight {
+  margin-bottom: 5px;
+}
+
+.performance {
+  width: 258px;
+  height: 263px;
+  background-color: #282d30;
+  border-radius: 5px;
+}
+
+.recharts-polar-angle-axis-ticks {
+  color: #fff;
+  font-size: 12px;
+}
+
+.recharts-responsive-container {
+  margin: 0;
+}
+
+.recharts-polar-grid-angle {
+  display: none;
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+}
+.informations__calories, .informations__protein, .informations__apple, .informations__burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  background-color: #fbfbfb;
+  height: 124px;
+  width: 258px;
+  border-radius: 5px;
+}
+.informations h1, .informations p {
+  margin: 0;
+}
+.informations h1 {
+  font-size: 20px;
+  color: #282d30;
+}
+.informations p {
+  font-size: 14px;
+  color: #74798c;
+}
+.informations img {
+  margin-right: 20px;
+  margin-left: -30px;
+}
+
+.score {
+  width: 258px;
+  height: 263px;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+}
+.score__header {
+  padding: 24px 24px 0 24px;
+}
+.score__header h1 {
+  margin: 0;
+}
+.score__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  bottom: 64%;
+  left: 25%;
+  width: 45%;
+  height: 45%;
+  border-radius: 50%;
+}
+.score__label__number {
+  font-weight: 800;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.score__label__text {
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=App.css.map */

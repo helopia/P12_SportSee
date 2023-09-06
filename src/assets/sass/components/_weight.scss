@@ -1,0 +1,48 @@
+.activity {
+  height: 320px;
+  width: 100%;
+  margin-bottom: 4rem;
+  margin-right: 20px;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+
+    &__legend {
+      color: #74798c;
+      font-size: 14px;
+
+      &__dot {
+        margin-right: 5px;
+        margin-left: 50px;
+      }
+
+    }
+
+    & h3 {
+      margin-top: 0;
+      font-size: 15px;
+      color: #20253a;
+    }
+  }
+}
+
+
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #e60000;
+  color: #fff;
+}
+
+.weight {
+  margin-bottom: 5px;
+}

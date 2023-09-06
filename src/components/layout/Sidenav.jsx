@@ -23,8 +23,6 @@ const Sidenav = () => {
                     <NavLink to="#">
                         <img src={Haltere} alt="Haltere"/>
                     </NavLink>
-
-
                 </div>
                 <p className="sidenav__content__copyright">Copyright, SportSee 2020</p>
             </div>
